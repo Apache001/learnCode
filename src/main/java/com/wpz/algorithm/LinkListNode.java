@@ -15,4 +15,12 @@ public class LinkListNode {
     public LinkListNode(int data) {
         this.data = data;
     }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
 }

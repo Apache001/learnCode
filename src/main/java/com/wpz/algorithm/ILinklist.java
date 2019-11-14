@@ -27,14 +27,14 @@ public interface ILinklist {
      * @param data
      * @param index
      */
-    void insert(int data, int index);
+    void insert(LinkListNode head,int data, int index);
 
     /**
      * 删除指定节点
      *
      * @param data
      */
-    void del(int data);
+    void del(LinkListNode head,int data);
 
     /**
      * 打印单链表
@@ -48,14 +48,14 @@ public interface ILinklist {
      *
      * @param data
      */
-    void searche(int data);
+    void search(int data);
 
     /**
      * 获取单链表长度
      *
      * @param head
      */
-    void getLength(LinkListNode head);
+    int getLength(LinkListNode head);
 
     /**
      * 反转单链表
