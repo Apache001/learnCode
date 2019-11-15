@@ -22,8 +22,11 @@ public class LinkListDemo {
         linkList.print(linkList.head);
         System.out.println();
 
-        linkList.del(linkList.head, 1);
-        linkList.print(linkList.head);
+//        Node head = linkList.del(linkList.head, 2);
+//        linkList.print(head);
+
+        int index = linkList.search(linkList.head,4);
+        System.out.println(index);
     }
 
     /**
@@ -79,22 +82,23 @@ public class LinkListDemo {
         tmp.next = newNode;
     }
 
-    public void del(Node head, int data) {
+    public Node del(Node head, int data) {
         if (head == null) {
-            return;
+            return head;
         }
         if (head.data == data) {
             head = head.next;
-            return;
+            return head;
         }
         Node tmp = head;
         while (tmp.next != null) {
             if (tmp.next.data == data) {
                 tmp.next = tmp.next.next;
-                return;
+                return head;
             }
             tmp = tmp.next;
         }
+        return head;
     }
 
     public void print(Node head) {
@@ -108,8 +112,17 @@ public class LinkListDemo {
         }
     }
 
-    public void search(int data) {
-
+    public int search(Node head, int data) {
+        Node tmp = head;
+        int index = 1;
+        while (head != null) {
+            if (tmp.data == data) {
+                return index;
+            }
+            index++;
+            tmp = tmp.next;
+        }
+        return -1;
     }
 
     public int getLength(Node head) {
