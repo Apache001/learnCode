@@ -1,9 +1,4 @@
-package com.wpz.algorithm.impl;
-
-import com.wpz.algorithm.ILinklist;
-import com.wpz.algorithm.LinkListNode;
-
-import java.awt.*;
+package com.wpz.algorithm;
 
 
 /**
@@ -11,7 +6,7 @@ import java.awt.*;
  * @Desctription:
  * @Date: Created in 2019/11/14 21:19
  */
-public class LinkListDemo implements ILinklist {
+public class LinkListDemo {
 
     public static void main(String[] args) {
         LinkListDemo linkList = new LinkListDemo();
@@ -27,30 +22,40 @@ public class LinkListDemo implements ILinklist {
         linkList.print(linkList.head);
         System.out.println();
 
-        linkList.del(linkList.head,1);
+        linkList.del(linkList.head, 1);
         linkList.print(linkList.head);
     }
 
-    private LinkListNode head = null;
+    /**
+     * 头结点
+     */
+    Node head = null;
 
+    class Node {
 
-    @Override
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
     public void insertHead(int data) {
-        LinkListNode node = new LinkListNode(data);
+        Node node = new Node(data);
         if (head == null) {
             head = node;
             return;
         }
-        LinkListNode tmp = head;
+        Node tmp = head;
         while (tmp.next != null) {
             tmp = tmp.next;
         }
         tmp.next = node;
     }
 
-    @Override
     public void insertTail(int data) {
-        LinkListNode newNode = new LinkListNode(data);
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             return;
@@ -59,34 +64,32 @@ public class LinkListDemo implements ILinklist {
         head = newNode;
     }
 
-    @Override
-    public void insert(LinkListNode head, int data, int index) {
+    public void insert(Node head, int data, int index) {
         if (index < 0 || index > this.getLength(head)) {
             throw new IllegalArgumentException("插入位置不存在");
         }
-        LinkListNode tmp = head;
+        Node tmp = head;
         int count = 1;
         while (count < index) {
             tmp = tmp.next;
             count++;
         }
-        LinkListNode newNode = new LinkListNode(data);
+        Node newNode = new Node(data);
         newNode.next = tmp.next;
         tmp.next = newNode;
     }
 
-    @Override
-    public void del(LinkListNode head, int data) {
+    public void del(Node head, int data) {
         if (head == null) {
             return;
         }
-        if (head.getData() == data) {
+        if (head.data == data) {
             head = head.next;
             return;
         }
-        LinkListNode tmp = head;
+        Node tmp = head;
         while (tmp.next != null) {
-            if (tmp.next.getData() == data) {
+            if (tmp.next.data == data) {
                 tmp.next = tmp.next.next;
                 return;
             }
@@ -94,27 +97,24 @@ public class LinkListDemo implements ILinklist {
         }
     }
 
-    @Override
-    public void print(LinkListNode head) {
+    public void print(Node head) {
         if (head == null) {
             System.out.println("链表为空");
         }
-        LinkListNode tmp = head;
+        Node tmp = head;
         while (tmp != null) {
-            System.out.print(tmp.getData() + "->");
+            System.out.print(tmp.data + "->");
             tmp = tmp.next;
         }
     }
 
-    @Override
     public void search(int data) {
 
     }
 
-    @Override
-    public int getLength(LinkListNode head) {
+    public int getLength(Node head) {
         int count = 0;
-        LinkListNode tmp = head;
+        Node tmp = head;
         while (tmp != null) {
             count++;
             tmp = tmp.next;
@@ -122,8 +122,7 @@ public class LinkListDemo implements ILinklist {
         return count;
     }
 
-    @Override
-    public void reverse(LinkListNode head) {
+    public void reverse(Node head) {
 
     }
 }
