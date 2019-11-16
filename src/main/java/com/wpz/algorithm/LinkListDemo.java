@@ -282,6 +282,12 @@ public class LinkListDemo {
         return slow;
     }
 
+    /**
+     * 删除链表重复元素
+     *
+     * @param head
+     * @return
+     */
     Node deleteDuplicates(Node head) {
         if (head == null) {
             return null;
@@ -292,7 +298,7 @@ public class LinkListDemo {
             if (cur.data == pre.data) {
                 pre.next = cur.next;
                 cur = cur.next;
-            }else{
+            } else {
                 cur = cur.next;
                 pre = pre.next;
             }
