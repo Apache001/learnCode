@@ -39,6 +39,20 @@ public class LinkListDemo {
 
         Node k = linkList.getK(linkList.head, 4);
         System.out.println(k.data);
+
+
+        LinkListDemo linkList1 = new LinkListDemo();
+        linkList1.insertHead(3);
+        linkList1.insertHead(8);
+        linkList1.insertHead(10);
+        linkList1.insertHead(12);
+
+        LinkListDemo linkList2 = new LinkListDemo();
+        linkList2.insertHead(1);
+        linkList2.insertHead(4);
+        linkList2.insertHead(20);
+        Node node = linkList.mergeList(linkList1.head, linkList2.head);
+        linkList.print(node);
     }
 
     /**
@@ -57,11 +71,11 @@ public class LinkListDemo {
     }
 
     /**
-     * 头部插入节点
+     * 尾部插入节点
      *
      * @param data
      */
-    public void insertHead(int data) {
+    public void insertTail(int data) {
         Node node = new Node(data);
         if (head == null) {
             head = node;
@@ -75,11 +89,11 @@ public class LinkListDemo {
     }
 
     /**
-     * 尾部插入节点
+     * 头部插入节点
      *
      * @param data
      */
-    public void insertTail(int data) {
+    public void insertHead(int data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -304,5 +318,75 @@ public class LinkListDemo {
             }
         }
         return head;
+    }
+
+    /**
+     * 合并两个有序单链表(递归)
+     *
+     * @param head1
+     * @param head2
+     * @return
+     */
+    Node mergeListRecurse(Node head1, Node head2) {
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        Node resultHead = null;
+
+        if (head1.data <= head2.data) {
+            resultHead = head1;
+            resultHead.next = mergeListRecurse(head1.next, head2);
+        }
+        if (head1.data > head2.data) {
+            resultHead = head2;
+            resultHead.next = mergeListRecurse(head1, head2.next);
+        }
+        return resultHead;
+    }
+
+    /**
+     * 合并两个有序单链表(非递归)
+     *
+     * @param head1
+     * @param head2
+     * @return
+     */
+    Node mergeList(Node head1, Node head2) {
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        Node result = null;
+        if (head1.data <= head2.data) {
+            result = head1;
+            head1 = head1.next;
+        } else {
+            result = head2;
+            head2 = head2.next;
+        }
+
+        Node tmp = result;
+        while (head1 != null && head2 != null) {
+            if (head1.data <= head2.data) {
+                tmp.next = head1;
+                head1 = head1.next;
+            } else {
+                tmp.next = head2;
+                head2 = head2.next;
+            }
+            tmp = tmp.next;
+        }
+        if (head1 == null) {
+            tmp.next = head2;
+        }
+        if (head2 == null) {
+            tmp.next = head1;
+        }
+        return result;
     }
 }
