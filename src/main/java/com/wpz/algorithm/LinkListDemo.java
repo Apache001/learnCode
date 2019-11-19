@@ -1,11 +1,7 @@
 package com.wpz.algorithm;
 
 
-import org.springframework.util.CollectionUtils;
-
-import java.util.List;
 import java.util.PriorityQueue;
-import java.util.stream.Collectors;
 
 /**
  * @Author: wpz
@@ -25,6 +21,7 @@ public class LinkListDemo {
         linkList.insertTail(7);
 
         linkList.print(linkList.head);
+        linkList.printReverseRecurse(linkList.head);
 
 //        linkList.insert(linkList.head, 8, 4);
 //        linkList.print(linkList.head);
@@ -61,8 +58,8 @@ public class LinkListDemo {
 //        Node node = linkList.mergeList(linkList1.head, linkList2.head);
 //        linkList.print(node);
 
-        Node node = linkList.reverseK(linkList.head, 2);
-        linkList.print(node);
+//        Node node = linkList.reverseK(linkList.head, 2);
+//        linkList.print(node);
     }
 
     /**
@@ -147,7 +144,7 @@ public class LinkListDemo {
         return head;
     }
 
-    public void print(Node head) {
+    private void print(Node head) {
         if (head == null) {
             System.out.println("链表为空");
         }
@@ -157,6 +154,20 @@ public class LinkListDemo {
             tmp = tmp.next;
         }
         System.out.println();
+    }
+
+    /**
+     * 逆序打印单链表(递归)
+     *
+     * @param head
+     */
+    private void printReverseRecurse(Node head) {
+        if (head == null) {
+            return;
+        }
+
+        printReverseRecurse(head.next);
+        System.out.print(head.data + "->");
     }
 
     public int search(Node head, int data) {
@@ -466,10 +477,11 @@ public class LinkListDemo {
             }
         }
         Node result = new Node(queue.poll());
+        Node tmp = result;
         while (!queue.isEmpty()) {
             Node newNode = new Node(queue.poll());
-            Node tmp = result;
             tmp.next = newNode;
+            tmp = newNode;
         }
         return result;
     }
