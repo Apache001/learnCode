@@ -1,6 +1,12 @@
 package com.wpz.algorithm;
 
 
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.stream.Collectors;
+
 /**
  * @Author: wpz
  * @Desctription:
@@ -10,12 +16,13 @@ public class LinkListDemo {
 
     public static void main(String[] args) {
         LinkListDemo linkList = new LinkListDemo();
-        linkList.insertHead(1);
-        linkList.insertHead(2);
-        linkList.insertHead(3);
-        linkList.insertHead(4);
-        linkList.insertHead(5);
-        linkList.insertHead(6);
+        linkList.insertTail(1);
+        linkList.insertTail(2);
+        linkList.insertTail(3);
+        linkList.insertTail(4);
+        linkList.insertTail(5);
+        linkList.insertTail(6);
+        linkList.insertTail(7);
 
         linkList.print(linkList.head);
 
@@ -37,21 +44,24 @@ public class LinkListDemo {
 //        int i = linkList.circleLength(linkList.head);
 //        System.out.println(i);
 
-        Node k = linkList.getK(linkList.head, 4);
-        System.out.println(k.data);
+//        Node k = linkList.getK(linkList.head, 4);
+//        System.out.println(k.data);
 
 
-        LinkListDemo linkList1 = new LinkListDemo();
-        linkList1.insertHead(3);
-        linkList1.insertHead(8);
-        linkList1.insertHead(10);
-        linkList1.insertHead(12);
+//        LinkListDemo linkList1 = new LinkListDemo();
+//        linkList1.insertHead(3);
+//        linkList1.insertHead(8);
+//        linkList1.insertHead(10);
+//        linkList1.insertHead(12);
+//
+//        LinkListDemo linkList2 = new LinkListDemo();
+//        linkList2.insertHead(1);
+//        linkList2.insertHead(4);
+//        linkList2.insertHead(20);
+//        Node node = linkList.mergeList(linkList1.head, linkList2.head);
+//        linkList.print(node);
 
-        LinkListDemo linkList2 = new LinkListDemo();
-        linkList2.insertHead(1);
-        linkList2.insertHead(4);
-        linkList2.insertHead(20);
-        Node node = linkList.mergeList(linkList1.head, linkList2.head);
+        Node node = linkList.reverseK(linkList.head, 2);
         linkList.print(node);
     }
 
@@ -386,6 +396,80 @@ public class LinkListDemo {
         }
         if (head2 == null) {
             tmp.next = head1;
+        }
+        return result;
+    }
+
+    /**
+     * k个一组反转链表
+     *
+     * @param head
+     * @return
+     */
+    Node reverseK(Node head, int k) {
+        if (head == null || head.next == null || k < 1) {
+            return head;
+        }
+        Node dummy = new Node(-1);
+        dummy.next = head;
+        Node pointer = dummy;
+
+        while (pointer != null) {
+            Node lastGroup = pointer;
+            int i = 0;
+            for (; i < k; i++) {
+                pointer = pointer.next;
+                if (pointer == null) {
+                    break;
+                }
+            }
+            if (i == k) {
+                Node nextGroup = pointer.next;
+                Node newNode = reverse1(lastGroup.next, nextGroup);
+                pointer = lastGroup.next;
+                lastGroup.next = newNode;
+                pointer.next = nextGroup;
+            }
+        }
+        return dummy.next;
+    }
+
+    private Node reverse1(Node head, Node tail) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node prev = null, temp = null;
+        while ((head != null) && (head != tail)) {
+            temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
+        }
+        return prev;
+    }
+
+    /**
+     * 合并k个有序链表
+     *
+     * @param heads
+     * @return
+     */
+    Node mergeKList(Node[] heads) {
+        if (heads == null || heads.length == 0) {
+            return null;
+        }
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        for (Node node : heads) {
+            while (node != null) {
+                queue.add(node.data);
+                node = node.next;
+            }
+        }
+        Node result = new Node(queue.poll());
+        while (!queue.isEmpty()) {
+            Node newNode = new Node(queue.poll());
+            Node tmp = result;
+            tmp.next = newNode;
         }
         return result;
     }
