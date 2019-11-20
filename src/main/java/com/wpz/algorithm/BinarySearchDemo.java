@@ -14,7 +14,7 @@ public class BinarySearchDemo {
     public static void main(String[] args) {
         int[] arr = {1, 2, 4, 4, 6, 8, 12, 16};
 
-        //   System.out.println(bSearchLast(arr, 4));
+        System.out.println(bSearchLast(arr, 4));
         System.out.println(sqrt(9, 5));
 
     }
