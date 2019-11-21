@@ -1,6 +1,9 @@
 package com.wpz.algorithm;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
+import sun.reflect.generics.tree.Tree;
 
 /**
  * @author wangpengzhe
@@ -20,6 +23,8 @@ public class BTreeDemo {
         }
 
         tree.afterPrint(tree.root);
+        System.out.println();
+        tree.cnegcePrint(tree.root);
     }
 
     class TreeNode {
@@ -83,6 +88,22 @@ public class BTreeDemo {
         System.out.print(root.data + "->");
     }
 
-
+    private void cnegcePrint(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode poll = queue.poll();
+            System.out.print(poll.data + "->");
+            if (poll.leftNode != null) {
+                queue.offer(poll.leftNode);
+            }
+            if (poll.rightNode != null) {
+                queue.offer(poll.rightNode);
+            }
+        }
+    }
 
 }
