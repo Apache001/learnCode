@@ -2,7 +2,7 @@ package com.wpz.algorithm;
 
 /**
  * @author wangpengzhe
- * @description
+ * @description  顺序队列
  * @date 2019/11/22 16:03
  * @copyright Copyright 2017-2027 JD.COM All Right Reserved
  */
