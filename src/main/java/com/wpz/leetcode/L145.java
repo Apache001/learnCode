@@ -5,11 +5,11 @@ import java.util.List;
 
 /**
  * @author wangpengzhe
- * @description  给定一个二叉树，返回它的中序 遍历。
- * @date 2019/11/26 20:08
+ * @description 给定一个二叉树，返回它的后序 遍历。
+ * @date 2019/11/26 20:21
  * @copyright Copyright 2017-2027 JD.COM All Right Reserved
  */
-public class L94 {
+public class L145 {
 
     class TreeNode {
 
@@ -24,15 +24,15 @@ public class L94 {
 
     List<Integer> list = new ArrayList<>();
 
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
 
         if (root == null) {
             return list;
         }
 
-        inorderTraversal(root.left);
+        postorderTraversal(root.left);
         list.add(root.val);
-        inorderTraversal(root.right);
+        postorderTraversal(root.right);
 
         return list;
     }
