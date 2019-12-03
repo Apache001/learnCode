@@ -16,7 +16,7 @@ import org.apache.commons.lang3.ArrayUtils;
 public class L46 {
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
+        int[] nums = {1,1, 2, 3};
         //System.out.println(permute(nums));
         System.out.println(permute2(nums));
     }
