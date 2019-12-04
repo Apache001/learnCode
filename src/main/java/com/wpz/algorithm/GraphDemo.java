@@ -120,7 +120,7 @@ public class GraphDemo {
 
 
     public static void main(String[] args) {
-        int[] nums={1,2,3};
+        int[] nums = {1, 2, 3};
         quan(nums);
         System.out.println(res);
     }
@@ -138,7 +138,7 @@ public class GraphDemo {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if(!list.contains(nums[i])) {
+            if (!list.contains(nums[i])) {
                 list.add(nums[i]);
                 backtrack(n + 1, nums, list);
                 list.remove(list.size() - 1);
