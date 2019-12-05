@@ -7,10 +7,11 @@ import java.util.Map;
 
 /**
  * @Author: wpz
- * @Desctription:
+ * @Desctription: 八皇后问题
  * @Date: Created in 2019/12/4 21:55
  */
 public class EightQueen {
+
     public static void main(String[] args) {
 
         solution();
