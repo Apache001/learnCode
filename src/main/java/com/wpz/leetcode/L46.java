@@ -16,16 +16,16 @@ import org.apache.commons.lang3.ArrayUtils;
 public class L46 {
 
     public static void main(String[] args) {
-        int[] nums = {1,1, 2, 3};
-        //System.out.println(permute(nums));
-        System.out.println(permute2(nums));
+        int[] nums = {1, 2, 3};
+        System.out.println(permute(nums));
+        //System.out.println(permute2(nums));
     }
 
     static List<List<Integer>> res = new ArrayList<>();
 
     public static List<List<Integer>> permute(int[] nums) {
         List<Integer> list = new ArrayList<>();
-        backtrack(0, nums, list);
+        backtrack(nums, list);
         return res;
     }
 
@@ -34,8 +34,8 @@ public class L46 {
      *
      * @return void
      */
-    public static void backtrack(int n, int[] nums, List<Integer> list) {
-        if (nums.length == n) {
+    public static void backtrack(int[] nums, List<Integer> list) {
+        if (nums.length == list.size()) {
             res.add(new ArrayList<>(list));
             return;
         }
@@ -43,14 +43,14 @@ public class L46 {
         for (int i = 0; i < nums.length; i++) {
             if (!list.contains(nums[i])) {
                 list.add(nums[i]);
-                backtrack(n + 1, nums, list);
+                backtrack(nums, list);
                 list.remove(list.size() - 1);
             }
         }
     }
 
     public static List<List<Integer>> permute2(int[] nums) {
-        recur(nums,0,nums.length);
+        recur(nums, 0, nums.length);
         return res;
     }
 
