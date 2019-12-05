@@ -1,58 +1,34 @@
 package com.wpz.leetcode;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author wangpengzhe
- * @description n皇后
- * @date 2019/12/4 19:55
+ * @description
+ * @date 2019/12/5 12:39
  * @copyright Copyright 2017-2027 JD.COM All Right Reserved
  */
-public class L51 {
+public class L52 {
 
     public static void main(String[] args) {
 
-        System.out.println(solveNQueens(4));
+        System.out.println(totalNQueens(8));
 
     }
 
-    static List<Integer[]> r = new ArrayList<>();
+    static int totalCount = 0;
 
-    public static List<List<String>> solveNQueens(int n) {
-        List<List<String>> res = new ArrayList<>();
-        if (n <= 0) {
-            return res;
-        }
-
+    public static int totalNQueens(int n) {
         Integer[] queen = new Integer[n];
         backtrace(n, queen, 0);
-
-        for (int i = 0; i < r.size(); i++) {
-            List<String> list = new ArrayList<>();
-            for (int j = 0; j < n; j++) {
-                int c = r.get(i)[j];
-                StringBuilder sb = new StringBuilder();
-                for (int k = 0; k < n; k++) {
-                    if (k == c) {
-                        sb.append("Q");
-                    } else {
-                        sb.append(".");
-                    }
-                }
-                list.add(sb.toString());
-            }
-            res.add(list);
-        }
-
-        return res;
+        return totalCount;
     }
 
     private static void backtrace(int n, Integer[] queen, int row) {
         if (row == n) {
-            r.add(Arrays.copyOf(queen, queen.length));
+            totalCount++;
             return;
         }
         for (int column = 0; column < n; column++) {
