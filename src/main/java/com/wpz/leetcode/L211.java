@@ -100,7 +100,7 @@ public class L211 {
                 if (next == null || next.size() == 0 && length <= count) {
                     return true;
                 }
-                if (next == null || next.size() == 0) {
+                if (next.size() == 0) {
                     return false;
                 }
                 count++;
