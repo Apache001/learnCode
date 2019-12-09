@@ -5,7 +5,7 @@ import java.util.TreeMap;
 
 /**
  * @Author: wpz
- * @Desctription:
+ * @Desctription:  search(word) 可以搜索文字或正则表达式字符串，字符串只包含字母 . 或 a-z 。 . 可以表示任何一个字母。
  * @Date: Created in 2019/12/8 20:43
  */
 public class L211 {
@@ -93,18 +93,23 @@ public class L211 {
         if (start == length) {
             return false;
         }
+
         for (int i = start; i < length; i++) {
             if (chars[i] == '.') {
                 Map<Character, TrieNode> next = root.next;
-                if (next == null && length <= count) {
+                if (next == null || next.size() == 0 && length <= count) {
                     return true;
                 }
-                if (next == null) {
+                if (next == null || next.size() == 0) {
                     return false;
                 }
+                count++;
                 for (Map.Entry<Character, TrieNode> entry : next.entrySet()) {
-                    return searchRec(chars, i + 1, length, entry.getValue(), count);
+                    if (searchRec(chars, i + 1, length, entry.getValue(), count)) {
+                        return true;
+                    }
                 }
+                return false;
             } else {
                 TrieNode node = root.next.get(chars[i]);
                 if (node == null) {
@@ -114,6 +119,6 @@ public class L211 {
                 root = node;
             }
         }
-        return root.isWord;
+        return root.isWord && count >= length;
     }
 }
