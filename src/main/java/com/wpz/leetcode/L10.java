@@ -1,8 +1,5 @@
 package com.wpz.leetcode;
 
-import java.rmi.Remote;
-import javafx.scene.chart.PieChart;
-
 /**
  * @author wangpengzhe
  * @description 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
@@ -15,7 +12,7 @@ public class L10 {
 //    '*' 匹配零个或多个前面的那一个元素
 
     public static void main(String[] args) {
-        System.out.println(isMatch("aaa", "c*a*b*"));
+        System.out.println(isMatch("aaa", "ab*ac*a"));
     }
 
     static boolean matched = false;
