@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad86637-1389-4eeb-b039-ff4340d550b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L131.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L140.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,15 +16,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="L131.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="L131.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L131.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-350">
-              <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state relative-caret-position="1225">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#325#326#0" expanded="true" />
                 <element signature="e#377#378#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="L140.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L140.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L126.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L212.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L131.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L140.java" />
       </list>
     </option>
   </component>
@@ -203,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.L131">
+  <component name="RunManager" selected="Application.L140">
     <configuration name="L131" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -223,14 +236,14 @@
       <module name="learnCode" />
       <envs />
     </configuration>
-    <configuration name="L14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="L140" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.wpz.leetcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.wpz.leetcode.L14" />
+      <option name="MAIN_CLASS_NAME" value="com.wpz.leetcode.L140" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -380,19 +393,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.L14" />
-      <item index="1" class="java.lang.String" itemvalue="Application.L89" />
-      <item index="2" class="java.lang.String" itemvalue="Application.L93" />
-      <item index="3" class="java.lang.String" itemvalue="Application.L212" />
-      <item index="4" class="java.lang.String" itemvalue="Application.L131" />
+      <item index="0" class="java.lang.String" itemvalue="Application.L89" />
+      <item index="1" class="java.lang.String" itemvalue="Application.L93" />
+      <item index="2" class="java.lang.String" itemvalue="Application.L212" />
+      <item index="3" class="java.lang.String" itemvalue="Application.L131" />
+      <item index="4" class="java.lang.String" itemvalue="Application.L140" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.L131" />
-        <item index="1" class="java.lang.String" itemvalue="Application.L212" />
-        <item index="2" class="java.lang.String" itemvalue="Application.L93" />
-        <item index="3" class="java.lang.String" itemvalue="Application.L89" />
-        <item index="4" class="java.lang.String" itemvalue="Application.L14" />
+        <item index="0" class="java.lang.String" itemvalue="Application.L140" />
+        <item index="1" class="java.lang.String" itemvalue="Application.L131" />
+        <item index="2" class="java.lang.String" itemvalue="Application.L212" />
+        <item index="3" class="java.lang.String" itemvalue="Application.L93" />
+        <item index="4" class="java.lang.String" itemvalue="Application.L89" />
       </list>
     </recent_temporary>
   </component>
@@ -420,7 +433,7 @@
       <workItem from="1575854693274" duration="63000" />
       <workItem from="1575868608377" duration="1386000" />
       <workItem from="1575884983358" duration="6060000" />
-      <workItem from="1575945276902" duration="7670000" />
+      <workItem from="1575945276902" duration="14246000" />
     </task>
     <task id="LOCAL-00001" summary="modify code">
       <created>1573803675461</created>
@@ -513,11 +526,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575956552435</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="leetcode 212">
+      <created>1575960559168</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575960559168</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101527000" />
+    <option name="totallyTimeSpent" value="108103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1036" extended-state="6" />
@@ -575,19 +595,11 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="36" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/algorithm/ILinklist.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/algorithm/LinkListNode.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/algorithm/LinkListDemo.java">
@@ -920,12 +932,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L131.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-350">
-          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="1225">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#325#326#0" expanded="true" />
             <element signature="e#377#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L140.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
