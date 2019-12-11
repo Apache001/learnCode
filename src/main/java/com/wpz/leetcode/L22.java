@@ -19,7 +19,7 @@ public class L22 {
 //        "()()()"
 //     ]
     public static void main(String[] args) {
-        generateParenthesis(3);
+        generateParenthesis(2);
         System.out.println(res);
     }
 
