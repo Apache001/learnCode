@@ -29,32 +29,20 @@ public class L112 {
             return false;
         }
 
-        int tmp = 0;
-        return dfs(root, sum, tmp);
+        return dfs(root, sum);
     }
 
-    private boolean dfs(TreeNode root, int sum, int tmp) {
-        if (root == null && sum == tmp) {
-            return true;
-        }
-
+    private boolean dfs(TreeNode root, int sum) {
         if (root == null) {
             return false;
         }
-
-        if (tmp > sum) {
+        if (root.left == null && root.right == null && sum - root.val == 0) {
+            return true;
+        } else if (root.left == null && root.right == null) {
             return false;
         }
-        if (dfs(root.left, sum, tmp + root.left.val)) {
-            return true;
-        } else {
-            tmp -= root.left.val;
-        }
-        if (dfs(root.right, sum, tmp + root.right.val)) {
-            return true;
-        } else {
-            tmp -= root.right.val;
-        }
-        return false;
+
+        return dfs(root.left, sum - root.val) || dfs(root.right, sum - root.val);
+
     }
 }

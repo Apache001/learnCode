@@ -16,12 +16,13 @@ public class BTreeDemo {
     TreeNode root = null;
 
     public static void main(String[] args) {
-        int[] arr = {5, 2, 8, 1, 3, 7, 20, 16};
+        int[] arr = {5, 2, 8, 1};
         BTreeDemo tree = new BTreeDemo();
         for (int i = 0; i < arr.length; i++) {
             tree.insert(arr[i]);
         }
-
+        tree.prePrint(tree.root);
+        System.out.println();
         tree.midPrint(tree.root);
         System.out.println();
         tree.cnegcePrint(tree.root);
