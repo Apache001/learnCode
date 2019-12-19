@@ -36,7 +36,7 @@ public class L32 {
                 max = Math.max(max, i - stack.peek());
             }
         }
-        return max;
+        return max ;
     }
 
     /**
