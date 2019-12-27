@@ -1,7 +1,10 @@
 package com.wpz.StringExercise;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 单词搜索2
@@ -21,8 +24,8 @@ public class SearchWords2 {
 //        };
         SearchWords2 trie = new SearchWords2();
 
-        String[] words = {"ab","cb","ad","bd","ac","ca","da","bc","db","adcb","dabc","abb","acb"};
-        char[][] board = {{'a','b'},{'c','d'}};
+        String[] words = {"ab", "cb", "ad", "bd", "ac", "ca", "da", "bc", "db", "adcb", "dabc", "abb", "acb"};
+        char[][] board = {{'a', 'b'}, {'c', 'd'}};
         trie.findWords(board, words);
 
         System.out.println(trie.res);
@@ -43,46 +46,41 @@ public class SearchWords2 {
         int row = board.length;
         int column = board[0].length;
         boolean[][] visited = new boolean[row][column];
-
-        for (String word : words) {
-            for (int i = 0; i < row; i++) {
-                for (int j = 0; j < column; j++) {
-                    if (isValid(board, word, i, j, 0, visited, "")) {
-                        if(!res.contains(word)){
-                            res.add(word);
-                        }
-                    }
-                }
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                dfs(board, words.length, i, j, visited, "");
             }
         }
 
         return res;
     }
 
-    private boolean isValid(char[][] board, String word, int row, int column, int wordIndex, boolean[][] visited, String str) {
-        if (word.length() == wordIndex) {
-            return true;
+    private void dfs(char[][] board, int wordCount, int row, int column, boolean[][] visited, String str) {
+        if (row < 0 || row >= board.length || column < 0 || column >= board[row].length) {
+            return;
+        }
+        if (res.size() == wordCount) {
+            return;
+        }
+        if (visited[row][column]) {
+            return;
         }
 
-        boolean flag = false;
-        if (row >= 0 && row < board.length && column >= 0 && column < board[0].length && board[row][column] == word.charAt(wordIndex)
-            && !visited[row][column]) {
-            wordIndex++;
-            visited[row][column] = true;
-            str += board[row][column];
-            if (searchWord(str)) {
-                return true;
-            } else if (!searchWordPrefix(str)) {
-                return false;
+        str += board[row][column];
+        if (!searchWordPrefix(str)) {
+            return;
+        }
+        if (searchWord(str)) {
+            if (!res.contains(str)) {
+                res.add(str);
             }
-
-            flag = isValid(board, word, row, column + 1, wordIndex, visited, str) ||
-                isValid(board, word, row, column - 1, wordIndex, visited, str) ||
-                isValid(board, word, row + 1, column, wordIndex, visited, str) ||
-                isValid(board, word, row - 1, column, wordIndex, visited, str);
-            visited[row][column] = false;
         }
-        return flag;
+        visited[row][column] = true;
+        dfs(board, wordCount, row, column + 1, visited, str);
+        dfs(board, wordCount, row, column - 1, visited, str);
+        dfs(board, wordCount, row + 1, column, visited, str);
+        dfs(board, wordCount, row - 1, column, visited, str);
+        visited[row][column] = false;
     }
 
 
@@ -103,7 +101,7 @@ public class SearchWords2 {
     }
 
     private void addWord(String word) {
-        if (word == null) {
+        if (word == null || word.length() == 0) {
             return;
         }
         Node curr = root;

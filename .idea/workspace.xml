@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad86637-1389-4eeb-b039-ff4340d550b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SearchWords2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SearchWords2.java" afterPath="$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SearchWords2.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,21 +24,15 @@
       <file leaf-file-name="SearchWords2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SearchWords2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1021">
-              <caret line="50" column="48" lean-forward="false" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+            <state relative-caret-position="2675">
+              <caret line="144" column="13" lean-forward="true" selection-start-line="144" selection-start-column="13" selection-end-line="144" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2451#2452#0" expanded="true" />
+                <element signature="e#2499#2500#0" expanded="true" />
+                <element signature="e#2550#2551#0" expanded="true" />
+                <element signature="e#2583#2584#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="L212.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L212.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2205">
-              <caret line="70" column="32" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -59,6 +53,19 @@
             <state relative-caret-position="1295">
               <caret line="37" column="83" lean-forward="false" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="83" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="L212.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L212.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+              <folding>
+                <element signature="e#2775#2776#0" expanded="true" />
+                <element signature="e#2821#2822#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,6 +92,7 @@
       <find>单词</find>
       <find>单词搜索</find>
       <find>搜索</find>
+      <find>SearchWords2</find>
     </findStrings>
     <dirStrings>
       <dir>E:\learnNote\learnCode\src\main\java\com\wpz</dir>
@@ -130,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L89.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L93.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L126.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L212.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L131.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L140.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L46.java" />
@@ -149,6 +156,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/algorithm/ThrowEggsDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/PalindromeDemo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SplitPalindrome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L212.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SearchWords2.java" />
       </list>
     </option>
@@ -263,14 +271,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.SearchWords2">
-    <configuration name="HeapSortDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="L212" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.wpz.algorithm.*" />
+          <option name="PATTERN" value="com.wpz.leetcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.wpz.algorithm.HeapSortDemo" />
+      <option name="MAIN_CLASS_NAME" value="com.wpz.leetcode.L212" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -439,19 +447,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.HeapSortDemo" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ThrowEggsDemo" />
-      <item index="2" class="java.lang.String" itemvalue="Application.PalindromeDemo" />
-      <item index="3" class="java.lang.String" itemvalue="Application.SplitPalindrome" />
-      <item index="4" class="java.lang.String" itemvalue="Application.SearchWords2" />
+      <item index="0" class="java.lang.String" itemvalue="Application.ThrowEggsDemo" />
+      <item index="1" class="java.lang.String" itemvalue="Application.PalindromeDemo" />
+      <item index="2" class="java.lang.String" itemvalue="Application.SplitPalindrome" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SearchWords2" />
+      <item index="4" class="java.lang.String" itemvalue="Application.L212" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.SearchWords2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SplitPalindrome" />
-        <item index="2" class="java.lang.String" itemvalue="Application.PalindromeDemo" />
-        <item index="3" class="java.lang.String" itemvalue="Application.ThrowEggsDemo" />
-        <item index="4" class="java.lang.String" itemvalue="Application.HeapSortDemo" />
+        <item index="1" class="java.lang.String" itemvalue="Application.L212" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SplitPalindrome" />
+        <item index="3" class="java.lang.String" itemvalue="Application.PalindromeDemo" />
+        <item index="4" class="java.lang.String" itemvalue="Application.ThrowEggsDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -501,7 +509,7 @@
       <workItem from="1577187222441" duration="2956000" />
       <workItem from="1577410255168" duration="68000" />
       <workItem from="1577421913376" duration="5748000" />
-      <workItem from="1577429389953" duration="49000" />
+      <workItem from="1577429389953" duration="3771000" />
     </task>
     <task id="LOCAL-00001" summary="modify code">
       <created>1573803675461</created>
@@ -664,11 +672,18 @@
       <option name="project" value="LOCAL" />
       <updated>1577189577098</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="是否回文串">
+      <created>1577429445986</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1577429445986</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173445000" />
+    <option name="totallyTimeSpent" value="177167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1036" extended-state="6" />
@@ -676,6 +691,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -690,14 +706,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.74692875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5687961" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3174946" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -765,7 +780,7 @@
           <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="70" />
+      <option name="time" value="71" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1117,18 +1132,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/leetcode/L212.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="70" column="32" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="50">
+          <caret line="59" column="38" lean-forward="true" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+          <folding>
+            <element signature="e#2775#2776#0" expanded="true" />
+            <element signature="e#2821#2822#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wpz/StringExercise/SearchWords2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1021">
-          <caret line="50" column="48" lean-forward="false" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+        <state relative-caret-position="2675">
+          <caret line="144" column="13" lean-forward="true" selection-start-line="144" selection-start-column="13" selection-end-line="144" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2451#2452#0" expanded="true" />
+            <element signature="e#2499#2500#0" expanded="true" />
+            <element signature="e#2550#2551#0" expanded="true" />
+            <element signature="e#2583#2584#0" expanded="true" />
           </folding>
         </state>
       </provider>
