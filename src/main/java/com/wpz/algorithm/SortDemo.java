@@ -11,7 +11,7 @@ public class SortDemo {
     public static void main(String[] args) {
         int[] arr = {2, 6, 1, 8, 10, 7, 9, 28, 4};
 
-        System.out.println(findK(arr, 8));
+        System.out.println(findK(arr, 2));
         for (int i : arr) {
             System.out.print(i + " ");
         }

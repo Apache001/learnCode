@@ -1,4 +1,4 @@
-package com.wpz.arrayExercise;
+package com.wpz.specialExercise.arrayExercise;
 
 /**
  * 乘积最大子序列

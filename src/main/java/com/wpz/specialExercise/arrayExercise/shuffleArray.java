@@ -1,6 +1,5 @@
-package com.wpz.arrayExercise;
+package com.wpz.specialExercise.arrayExercise;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /**

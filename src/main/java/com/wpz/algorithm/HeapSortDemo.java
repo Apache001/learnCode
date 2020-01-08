@@ -9,7 +9,7 @@ package com.wpz.algorithm;
 public class HeapSortDemo {
 
     public static void main(String[] args) {
-        int[] arr = {2, 6, 1, 8, 10, 16};
+        int[] arr = {1, 5, 2, 7, 3, 4, 6};
         heapSort(arr);
 
         for (int i : arr) {

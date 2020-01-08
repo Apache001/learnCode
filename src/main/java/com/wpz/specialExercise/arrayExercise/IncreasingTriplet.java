@@ -1,7 +1,4 @@
-package com.wpz.arrayExercise;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
+package com.wpz.specialExercise.arrayExercise;
 
 /**
  * 给定一个未排序的数组，判断这个数组中是否存在长度为 3 的递增子序列。

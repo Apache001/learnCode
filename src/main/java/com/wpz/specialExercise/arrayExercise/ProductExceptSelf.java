@@ -1,4 +1,4 @@
-package com.wpz.arrayExercise;
+package com.wpz.specialExercise.arrayExercise;
 
 /**
  * 除自身以外数组的乘积

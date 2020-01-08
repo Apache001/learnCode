@@ -1,7 +1,4 @@
-package com.wpz.StringExercise;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.wpz.specialExercise.StringExercise;
 
 /**
  * 有效的字母异位词

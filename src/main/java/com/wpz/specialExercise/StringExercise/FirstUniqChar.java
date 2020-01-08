@@ -1,4 +1,4 @@
-package com.wpz.StringExercise;
+package com.wpz.specialExercise.StringExercise;
 
 /**
  * 字符串中的第一个唯一字符

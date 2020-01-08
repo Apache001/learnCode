@@ -1,4 +1,4 @@
-package com.wpz.StringExercise;
+package com.wpz.specialExercise.StringExercise;
 
 import java.util.Arrays;
 import java.util.HashMap;
