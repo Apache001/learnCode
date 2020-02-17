@@ -1,15 +1,18 @@
 package com.wpz.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author wangpengzhe
- * @description  顺序队列
+ * @description 顺序队列
  * @date 2019/11/22 16:03
  * @copyright Copyright 2017-2027 JD.COM All Right Reserved
  */
 public class ArrayQueueDemo {
 
     public static void main(String[] args) {
-        ArrayQueueDemo arrayQueueDemo = new  ArrayQueueDemo(5);
+        ArrayQueueDemo arrayQueueDemo = new ArrayQueueDemo(5);
         arrayQueueDemo.enqueue(1);
         arrayQueueDemo.enqueue(2);
 

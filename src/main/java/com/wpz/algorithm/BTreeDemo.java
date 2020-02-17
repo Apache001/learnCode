@@ -32,7 +32,7 @@ public class BTreeDemo {
 
         System.out.println(tree.getCountByLevel());
         System.out.println(tree.isBalanced(tree.root));
-        System.out.println(tree.isSymmetry(tree.root));
+        System.out.println(tree.isSymmetric(tree.root));
         tree.show(tree.root);
 
         tree.mirrorTree(tree.root);
@@ -238,8 +238,8 @@ public class BTreeDemo {
         }
         int leftHeight = getHeight(root.leftNode);
         int rightHeight = getHeight(root.rightNode);
-        if (Math.abs(leftHeight - rightHeight) <= 1) {
-            return true;
+        if (Math.abs(leftHeight - rightHeight) > 1) {
+            return false;
         }
         return isBalanced(root.leftNode) && isBalanced(root.rightNode);
     }
@@ -249,18 +249,26 @@ public class BTreeDemo {
      *
      * @return boolean
      */
-    private boolean isSymmetry(TreeNode root) {
+    public boolean isSymmetric(TreeNode root) {
         if (root == null) {
             return true;
         }
-        if (root.leftNode == null && root.rightNode == null) {
+
+        return isMatch(root.leftNode, root.rightNode);
+    }
+
+    public boolean isMatch(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
             return true;
         }
-        if (root.leftNode == null || root.rightNode == null) {
+        if (left == null || right == null) {
             return false;
         }
-        return root.leftNode.data == root.rightNode.data && isSymmetry(root.leftNode) && isSymmetry(root.rightNode);
 
+        if (left.data != right.data) {
+            return false;
+        }
+        return isMatch(left.leftNode, right.rightNode) && isMatch(left.rightNode, right.leftNode);
 
     }
 
