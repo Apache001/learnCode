@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.SynchronousQueue;
 import javafx.scene.layout.Priority;
 
 /**
@@ -22,8 +24,13 @@ import javafx.scene.layout.Priority;
  */
 public class Test {
 
-    public static void main(String[] args) {
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.comparing(x -> -x));
+    public static void main(String[] args) throws InterruptedException {
+        BlockingQueue<Integer> queue = new SynchronousQueue<>();
+        System.out.print(queue.offer(1) + " ");
+        System.out.print(queue.offer(2) + " ");
+        System.out.print(queue.offer(3) + " ");
+        System.out.print(queue.take() + " ");
+        System.out.println(queue.size());
 
 //        int[][] arr = {{1, 0}};
 //        int[] res = findOrder(2, arr);

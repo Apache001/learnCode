@@ -27,37 +27,6 @@ public class KnapsackOne {
 
     static int res = Integer.MIN_VALUE;
 
-    /**
-     * @param c 背包容量
-     * @param n 物品个数
-     * @param weight 每个物品重量数组
-     * @param value 每个物品价值数组
-     */
-    public static int maxValueOfBag(int c, int n, int[] weight, int[] value) {
-        backtrace(0, weight, value, 0, 0, c, n);
-        return res;
-    }
-
-    /**
-     * @param i 第i个物品
-     * @param w 物品重量
-     * @param v 物品价值
-     * @param c 背包容量
-     * @param n 物品个数
-     */
-    public static void backtrace(int i, int[] w, int[] v, int sumValue, int sumWeight, int c, int n) {
-        if (sumWeight == c || i == n) {
-            if (sumValue > res) {
-                res = sumValue;
-            }
-            return;
-        }
-        backtrace(i + 1, w, v, sumValue, sumWeight, c, n);
-        if (w[i] + sumWeight <= c) {
-            backtrace(i + 1, w, v, sumValue + v[i], sumWeight + w[i], c, n);
-        }
-    }
-
 
     /**
      * 自顶向下递归
@@ -109,4 +78,5 @@ public class KnapsackOne {
 
         return dp[n][c];
     }
+
 }
