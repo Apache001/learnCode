@@ -9,7 +9,7 @@ package com.wpz.leetcode;
 public class L14 {
 
     public static void main(String[] args) {
-        String[] strs = {"flower", "aflow", "flight"};
+        String[] strs = {"flower", "flow", "flight"};
         System.out.println(longestCommonPrefix(strs));
         System.out.println("a".substring(0,0));
     }
@@ -22,7 +22,7 @@ public class L14 {
         String prefix = strs[0];
 
         for (int i = 1; i < strs.length; i++) {
-            while (strs[i].indexOf(prefix) != 0) {
+            while (!strs[i].contains(prefix)) {
                 prefix = prefix.substring(0, prefix.length() - 1);
             }
         }

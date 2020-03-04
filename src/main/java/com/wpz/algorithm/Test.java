@@ -1,5 +1,6 @@
 package com.wpz.algorithm;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -8,9 +9,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 import javafx.scene.layout.Priority;
@@ -25,33 +28,214 @@ import javafx.scene.layout.Priority;
 public class Test {
 
     public static void main(String[] args) throws InterruptedException {
-        BlockingQueue<Integer> queue = new SynchronousQueue<>();
-        System.out.print(queue.offer(1) + " ");
-        System.out.print(queue.offer(2) + " ");
-        System.out.print(queue.offer(3) + " ");
-        System.out.print(queue.take() + " ");
-        System.out.println(queue.size());
+//        BlockingQueue<Integer> queue = new SynchronousQueue<>();
+//        System.out.print(queue.offer(1) + " ");
+//        System.out.print(queue.offer(2) + " ");
+//        System.out.print(queue.offer(3) + " ");
+//        System.out.print(queue.take() + " ");
+//        System.out.println(queue.size());
 
-//        int[][] arr = {{1, 0}};
-//        int[] res = findOrder(2, arr);
 //
-//        for (int i : res) {
-//            System.out.print(i + " ");
-//        }
+        List<List<Integer>> res = new ArrayList<>();
+        Iterator it = res.iterator();
+        // it.remove();
+        Iterator it2 = res.iterator();
+        System.out.println(it == it2);
+//        res.containsAll()
+//        System.out.println(multiply("121323434313131223", "455424324343243423426"));
+//        System.out.println(reverseWords("ds "));
+        //   System.out.println(simplifyPath("/home/pig"));
+        System.out.println(getPermutation(4, 14));
 
-//        int[] nums1 = {1,2,3,0,0,0};
-//        int[] nums2 = {4,5,6};
-//        merge(nums1,3,nums2,3);
+    }
 
-//        List<String> list = new ArrayList<>();
-//        list.add("ale");
-//        list.add("apple");
-//        list.add("monkey");
-//        list.add("plea");
-//        String res = findLongestWord("abpcplea", list);
-//        System.out.println(res);
 
-        System.out.println(frequencySort("tree"));
+    public static int[][] merge(int[][] intervals) {
+        //边界判断
+        if (intervals.length <= 1) {
+            return intervals;
+        }
+
+        //先按起点位置进行排序
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
+
+        //利用list存储合并好的区间
+        List<int[]> result = new ArrayList<>();
+        //初始时将第一个区间放入list中
+        result.add(intervals[0]);
+        //记录上一合并好的区间在list中的位置
+        int last = 0;
+        //遍历并合并后面各区间
+        for (int i = 1; i < intervals.length; i++) {
+            //上一合并好的区间的起点和终点
+            int lastStart = result.get(last)[0];
+            int lastEnd = result.get(last)[1];
+            //当前要合并的区间的起点和终点
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+            //如果左边重合
+            if (lastStart == start) {
+                if (end > lastEnd) {
+                    result.set(last, new int[]{start, end});
+                }
+            } else {    //如果左边不重合
+                if (start > lastEnd) {
+                    result.add(new int[]{start, end});
+                    last++;
+                } else {
+                    if (end > lastEnd) {
+                        result.set(last, new int[]{lastStart, end});
+                    }
+                }
+            }
+        }
+
+        return result.toArray(new int[0][]);
+    }
+
+    public static String getPermutation(int n, int k) {
+        List<Integer> num = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            num.add(i);
+        }
+        int[] factorial = new int[n];
+        factorial[0] = 1;
+        for (int i = 1; i < n; i++) {
+            factorial[i] = i * factorial[i - 1];
+        }
+        n--;
+        StringBuilder res = new StringBuilder();
+        while (n >= 0) {
+            int t = factorial[n];
+            int loc = (int) (Math.ceil((double) k / (double) t)) - 1;
+            if (loc == -1) {
+                loc = num.size() - 1;
+            }
+            res.append(num.get(loc));
+            num.remove(loc);
+            k %= t;
+            n--;
+        }
+        return res.toString();
+    }
+
+    public static String simplifyPath(String path) {
+        String[] str = path.split("/");
+        Stack<String> stack = new Stack<>();
+
+        stack.push("/");
+        for (String s : str) {
+            if (s.equals(".") || s.isEmpty()) {
+                continue;
+            }
+            if (s.equals("..")) {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(s);
+            }
+        }
+
+        List<String> list = new ArrayList<>();
+        list.add("/");
+        while (!stack.isEmpty()) {
+            String tmp = stack.pop();
+            if (!tmp.equals("/")) {
+                list.add(tmp);
+                list.add("/");
+            }
+        }
+        String res = "";
+        for (int i = list.size() - 1; i >= 0; i--) {
+            res += list.get(i);
+        }
+        if (res.equals("/")) {
+            return res;
+        }
+        return res.substring(0, res.length() - 1);
+    }
+
+    public static String reverseWords(String s) {
+        Stack<String> stack = new Stack<String>();
+
+        String tmp = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ') {
+                tmp += s.charAt(i);
+            } else if (!tmp.isEmpty()) {
+                stack.push(tmp);
+                tmp = "";
+            }
+        }
+
+        if (!tmp.isEmpty()) {
+            stack.push(tmp);
+        }
+        String res = "";
+        while (!stack.isEmpty()) {
+            res += stack.pop() + " ";
+        }
+
+        return res.substring(0, res.length() - 1);
+    }
+
+    public static String multiply(String num1, String num2) {
+
+        int[] arr1 = new int[num1.length()];
+        int[] arr2 = new int[num2.length()];
+
+        for (int i = 0; i < num1.length(); i++) {
+            arr1[i] = Integer.parseInt(String.valueOf(num1.charAt(i)));
+        }
+        for (int j = 0; j < num2.length(); j++) {
+            arr2[j] = Integer.parseInt(String.valueOf(num2.charAt(j)));
+        }
+
+        int[] result = new int[num1.length() + num2.length()];
+
+        for (int i = 0; i < num1.length(); i++) {
+            for (int j = 0; j < num2.length(); j++) {
+                result[i + j] += arr1[i] * arr2[j];
+            }
+        }
+
+        int jinwei = 0;
+        for (int i = result.length - 1; i > 0; i--) {
+            jinwei = result[i] / 10;
+            result[i - 1] += jinwei;
+            result[i] = result[i] % 10;
+        }
+
+        String resultstr = "";
+        for (int i = 0; i < result.length - 1; i++) {
+            resultstr += "" + result[i];
+        }
+
+        return resultstr;
+
+    }
+
+    public static void getResult(int[] nums, int n) {
+
+        backtrace(nums, new ArrayList<>(), n);
+    }
+
+    static List<List<Integer>> res = new ArrayList<>();
+
+    private static void backtrace(int[] nums, List<Integer> list, int n) {
+        if (list.size() == n) {
+            res.add(new ArrayList<>(list));
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (!list.contains(nums[i])) {
+                list.add(nums[i]);
+                backtrace(nums, list, n);
+                list.remove(list.size() - 1);
+            }
+        }
     }
 
     public static String frequencySort(String s) {
