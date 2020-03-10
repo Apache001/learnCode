@@ -4,11 +4,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 添加说明记得一定要大于十个字符
+ * LRU缓存
  *
  * @author wangpengzhe
  * @date 2020/2/27 10:58
- * @copyright Copyright 2017-2027 JD.COM All Right Reserved
  */
 public class LRUCache<K,V> extends LinkedHashMap<K, V> {
 

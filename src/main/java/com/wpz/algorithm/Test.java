@@ -45,10 +45,37 @@ public class Test {
 //        System.out.println(multiply("121323434313131223", "455424324343243423426"));
 //        System.out.println(reverseWords("ds "));
         //   System.out.println(simplifyPath("/home/pig"));
-        System.out.println(getPermutation(4, 14));
-
+        //  System.out.println(getPermutation(4, 14));
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
     }
 
+
+    public static int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        //窗口左边界
+        int left = 0;
+        int count = 1;
+
+        for (int i = 1; i < s.length(); i++) {
+            int tmp = i - 1;
+            //当前字符和窗口内字符串是否存在重复字符
+            while (tmp >= left) {
+                if (s.charAt(i) == s.charAt(tmp)) {
+                    left++;
+                    break;
+                } else {
+                    count = Math.max(count, i - tmp + 1);
+                }
+                tmp--;
+            }
+
+        }
+
+        return count;
+    }
 
     public static int[][] merge(int[][] intervals) {
         //边界判断
