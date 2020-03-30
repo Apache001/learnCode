@@ -3,7 +3,9 @@ package designPattern;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 单例模式
@@ -14,8 +16,10 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Singleton {
 
     public static void main(String[] args) {
+
         List<Integer> list = new ArrayList<>();
         list.clear();
+        ReentrantLock lock = new ReentrantLock();
     }
 
     /**
@@ -174,7 +178,7 @@ public class Singleton {
     /**
      * 利用AtomicReference
      */
-    private static final AtomicReference<CASSingleton> INSTANCE = new AtomicReference<CASSingleton>();
+    private static final AtomicReference<CASSingleton> INSTANCE = new AtomicReference<>();
 
     /**
      * 使用CAS
@@ -183,7 +187,6 @@ public class Singleton {
 
         private CASSingleton() {
         }
-
         /**
          * 用CAS确保线程安全
          */

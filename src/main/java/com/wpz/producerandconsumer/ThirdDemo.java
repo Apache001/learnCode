@@ -68,7 +68,7 @@ public class ThirdDemo {
                 }
                 lock.lock();
                 try {
-                    if (count == 0) {
+                    while (count == 0) {
                         notEmpty.await();
                     }
 

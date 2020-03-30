@@ -14,6 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Demo {
 
     public static void main(String[] args) throws InterruptedException {
+
         Thread a = new Thread(new First());
         a.setName("线程1");
         a.start();
@@ -40,8 +41,8 @@ public class Demo {
 
                     System.out.println(Thread.currentThread().getName() + "->" + count);
                     count++;
-                    condition1.await();
                     condition2.signal();
+                    condition1.await();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

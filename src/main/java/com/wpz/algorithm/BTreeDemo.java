@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @author wangpengzhe
@@ -16,27 +17,32 @@ public class BTreeDemo {
     TreeNode root = null;
 
     public static void main(String[] args) {
+
         int[] arr = {5, 2, 8, 1};
         BTreeDemo tree = new BTreeDemo();
         for (int i = 0; i < arr.length; i++) {
             tree.insert(arr[i]);
         }
-        tree.prePrint(tree.root);
-        System.out.println();
-        tree.midPrint(tree.root);
-        System.out.println();
-        tree.cnegcePrint(tree.root);
-        System.out.println();
-
-        System.out.println(tree.getHeightDiedai(tree.root));
-
-        System.out.println(tree.getCountByLevel());
-        System.out.println(tree.isBalanced(tree.root));
-        System.out.println(tree.isSymmetric(tree.root));
+        // tree.prePrint(tree.root);
         tree.show(tree.root);
 
-        tree.mirrorTree(tree.root);
-        tree.show(tree.root);
+        System.out.println(tree.seriaTree(tree.root));
+//        System.out.println();
+//        tree.midPrint(tree.root);
+//        System.out.println();
+//        tree.cnegcePrint(tree.root);
+//        System.out.println();
+//
+//        System.out.println(tree.getHeightDiedai(tree.root));
+//
+//        System.out.println(tree.getCountByLevel());
+//        System.out.println(tree.isBalanced(tree.root));
+//        System.out.println(tree.isSymmetric(tree.root));
+//        tree.show(tree.root);
+//        System.out.println(seriaTree(tree.root));
+//
+//        tree.mirrorTree(tree.root);
+//        tree.show(tree.root);
     }
 
     class TreeNode {
@@ -270,6 +276,39 @@ public class BTreeDemo {
         }
         return isMatch(left.leftNode, right.rightNode) && isMatch(left.rightNode, right.leftNode);
 
+    }
+
+
+    public String seriaTree(TreeNode root) {
+        StringBuffer sb = new StringBuffer();
+        if (root == null) {
+            //空节点（#）
+            sb.append("#,");
+            return sb.toString();
+        }
+        sb.append(root.data + ",");
+        sb.append(seriaTree(root.leftNode));
+        sb.append(seriaTree(root.rightNode));
+
+        return sb.toString();
+    }
+
+    static int index = -1;
+
+    public TreeNode deSeriaTree(String str) {
+        String[] strArr = str.split(",");
+        index++;
+        if (index >= strArr.length) {
+            return null;
+        }
+        TreeNode node = null;
+        if (!"#".equals(strArr[index])) {
+            node = new TreeNode(Integer.valueOf(strArr[index]));
+            node.leftNode = deSeriaTree(str);
+            node.rightNode = deSeriaTree(str);
+        }
+
+        return node;
     }
 
     /**

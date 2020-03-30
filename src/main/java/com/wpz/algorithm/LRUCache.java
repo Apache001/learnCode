@@ -23,6 +23,7 @@ public class LRUCache<K,V> extends LinkedHashMap<K, V> {
     }
 
     public static void main(String[] args) {
+
         LRUCache<Integer,Integer> cache = new LRUCache<>();
         cache.put(1,1);
         cache.put(2,2);
