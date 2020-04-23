@@ -1,5 +1,11 @@
 package com.wpz.algorithm;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.GenericArrayType;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +37,13 @@ import sun.swing.BakedArrayList;
  */
 public class Test {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
+        InputStream in = new FileInputStream("/user/wangzheng/test.txt");
+        InputStream bin = new BufferedInputStream(in);
+        DataInputStream din = new DataInputStream(bin);
+        int data = din.readInt();
+        bin.read();
+
 //        BlockingQueue<Integer> queue = new SynchronousQueue<>();
 //        System.out.print(queue.offer(1) + " ");
 //        System.out.print(queue.offer(2) + " ");
@@ -60,7 +72,6 @@ public class Test {
 
 //        System.out.println(allPath);
 //        System.out.println(allPath.size());
-
 
         System.out.println(wordBreak("leetcode", Arrays.asList("leet", "code")));
     }

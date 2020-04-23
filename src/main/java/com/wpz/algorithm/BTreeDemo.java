@@ -1,5 +1,6 @@
 package com.wpz.algorithm;
 
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class BTreeDemo {
         }
         // tree.prePrint(tree.root);
         tree.show(tree.root);
-
+        System.out.println(tree.getRightNode(tree.root));
         System.out.println(tree.seriaTree(tree.root));
 //        System.out.println();
 //        tree.midPrint(tree.root);
@@ -278,6 +279,25 @@ public class BTreeDemo {
 
     }
 
+    /**
+     * 每层最右边节点
+     */
+    public List<Integer> getRightNode(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        dfs(root, 0, res);
+        return res;
+    }
+
+    public void dfs(TreeNode root, int level, List<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        if (res.size() == level) {
+            res.add(root.data);
+        }
+        dfs(root.rightNode, level + 1, res);
+        dfs(root.leftNode, level + 1, res);
+    }
 
     public String seriaTree(TreeNode root) {
         StringBuffer sb = new StringBuffer();

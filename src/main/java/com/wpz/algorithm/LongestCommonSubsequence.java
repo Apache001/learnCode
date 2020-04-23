@@ -4,6 +4,7 @@ import com.sun.corba.se.spi.ior.iiop.MaxStreamFormatVersionComponent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Set;
 
 /**
@@ -23,7 +24,6 @@ public class LongestCommonSubsequence {
         System.out.println(maxValue);
         System.out.println(res);
     }
-
     private static int maxValue = 0;
 
     public static void getLongestSequence(String s1, String s2) {
